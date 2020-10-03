@@ -1,19 +1,8 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>GretNet</title>
-    <meta name="description" content="GretNet  Track the non-monetary value of your Creation" property="description">
-    <meta name="keywords" content="GretNet, web monetization, creative" property="keywords">
-    <meta name="viewport" content="width=device-width, initial-scale=1" property="viewport">
-    <meta name="og:title" content="GretNet" property="og:title">
-    <meta name="og:description" content="GretNet  Track the non-monetary value of your creation" property="og:description">
-    <meta name="og:image" content="" property="og:image">
-    <link rel="icon" href="favicon.ico">
-    <link type="text/css" rel="stylesheet" href="./res/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="./res/styles.css">
-    
-    	
+<html>
+	<head>
+		<meta charset="utf-8">
+		
 		<!-- D3.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 
@@ -29,64 +18,9 @@
 			    font-weight: 300;
 			  }
 		</style>
-		
-  </head>
-  <body>
-    <div class="bg-image"></div>
-    <div>
-      <div id="loading" class="loading-state" style="display: none;"></div>
-      <div>
-        <section>
-          <div class="floating-signup__wrap col-xs-12 col-md-6 col-xs-offset-0 col-md-offset-3 floaty-vertical--middle floaty-horizontal--center floaty-unfloat-at--xs">
-            <div class="floating-signup rel">
-              <div class="container-fluid rel">
-                <div class="row">
-                  <div class="user-signup__intro">
-                    <h1 style="text-align: center;">GretNet</h1>
-                    <p style="text-align: center;">
-                      <img src="/res/spacer.png" alt="" class="spacer insert--image wrap-off-align-center"><br>
-                    </p>
-                    <p style="text-align: center;">Tracking the non-monetary value of your Creation</p>
-                    <p style="text-align: center;">
-                      <img src="/res/clean-hr.png" alt="" class="clean-hr insert--image wrap-off-align-center">
-                      <span style="font-size: 14px;">Enter your email address to stay up-to-date or to start a conversation (we're still in pre-launch state)</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="row">
-<!--                   <form class="form form-horizontal user-signup__form" name="form" novalidate="" action="//adrienjoly.us12.list-manage.com/subscribe/post?u=c1cfafd58fc9699f6d5a661e2&amp;id=a586ea22ee" method="POST"> -->
-                  <form class="form form-horizontal user-signup__form" name="form" novalidate="" action="//panamantis.us2.list-manage.com/subscribe/post?u=f4b5c646dae549e15c85cb11a&amp;id=871558e8d9" method="POST">
-                    <div class="mt-table--full">
-                      <div class="mt-td--centered-vertical user-signup__col-1">
-                        <div class="user-signup__form-group m-lg-v form-group col-sm-12">
-                          <input type="email" name="EMAIL" class="form-control form-control__input user-signup__email" pattern="/^[a-zA-Z0-9+-_]+(\.[_a-zA-Z0-9+]+)*@[a-zA-Z0-9+-_]+(\.[a-zA-Z0-9+-_]+)*(\.[a-zA-Z]+)$/" placeholder="Email" aria-required="true" required="required">
-                        </div>        
-                      </div>
-                      <div class="mt-td--centered-vertical user-signup__col-2">
-                        <div class="user-signup__form-group m-lg-v form-group text-center">
-                          <button type="submit" class="btn btn-default submit user-signup__submit"><span>SUBMIT</span></button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-<!--     <a href="https://github.com/adrienjoly/landing-page-boilerplate"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a> -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-179408641-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-    
-    
+	</head>	
+	<body>
+
 		<div id="infinityChart" style="text-align: center;"></div>
 
 		<script language="javascript" type="text/javascript">
@@ -119,7 +53,7 @@
 			var newFontSize = width * 62.5 / 2000;
 			d3.select("html").style("font-size", newFontSize + "%");
 
-			//Circle ranges -- sizes i believe
+			//Circle ranges
 			var circeRanges = [8 * width/2000, 30 * width/2000];
 			var forceRanges = [6 * width/2000, 10 * width/2000];
 
@@ -145,7 +79,6 @@
 			//Create the infinity path
 			//Formula from http://gamedev.stackexchange.com/questions/43691/how-can-i-move-an-object-in-an-infinity-or-figure-8-trajectory
 			var infScale = width/2*0.7;
-			infScale = 1.5*width/2*0.7;
 			var x, y, scale;
 			var infinityPath = [];
 			for (var i = 0; i < 209; i++) {
@@ -357,6 +290,6 @@
 
 
 		</script>
-		
-  </body>
+
+	</body>
 </html>
